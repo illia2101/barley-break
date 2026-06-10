@@ -1,0 +1,74 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #dbeafe, #f8fafc);
+  font-family: Arial, sans-serif;
+}
+
+.display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.wdr-cell[data-value="0"] {
+  color: transparent !important;
+}
+#winMessage {
+  font-size: 24px;
+  font-weight: bold;
+  color: #16a34a;
+  margin-bottom: 20px;
+}
+
+h1 {
+  color: #2563eb;
+  margin: 30px 0;
+}
+#pivotContainer {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.wdr-cell {
+  font-size: 18px !important;
+  font-weight: bold !important;
+  text-align: center !important;
+}
+#moves {
+  font-size: 22px;
+  font-weight: bold;
+  color: #1e40af;
+}
+.wdr-toolbar-wrapper,
+.wdr-header,
+.wdr-row-header,
+.wdr-grand-total {
+  display: none !important;
+}
+.wdr-grid-layout {
+  overflow: hidden !important;
+}
+
+.wdr-sheet {
+  overflow: hidden !important;
+}
+
+#shuffle {
+  margin-top: 25px;
+  padding: 14px 28px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #22c55e;
+  color: white;
+
+  font-size: 18px;
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+#shuffle:hover {
+  background: #16a34a;
+}
