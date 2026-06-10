@@ -1,7 +1,8 @@
 let board = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 0];
-
+const winMessage = document.getElementById("winMessage");
 let moves = 0;
-
+let gameWon = false;
+const WIN_STATE = "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,0";
 const shuffleBtn = document.getElementById("shuffle");
 const movesText = document.getElementById("moves");
 
@@ -104,16 +105,20 @@ const pivot = new WebDataRocks({
 });
 shuffleBoard();
 updateBoard();
+updateMoves();
 
 shuffleBtn.addEventListener("click", () => {
   shuffleBoard();
 
   moves = 0;
+  winMessage.textContent = "";
+  gameWon = false;
   updateMoves();
   updateBoard();
 });
 
 function moveTile(number) {
+  if (gameWon) return;
   const tileIndex = board.indexOf(number);
   const emptyIndex = board.indexOf(0);
 
@@ -135,8 +140,9 @@ function moveTile(number) {
     updateMoves();
     updateBoard();
 
-    if (board.join(",") === "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,0") {
-      alert(`Перемога! Ходів: ${moves}`);
+    if (board.join(",") === WIN_STATE) {
+      winMessage.textContent = `🎉 Перемога! Ходів: ${moves}`;
+      gameWon = true;
     }
   }
 }
@@ -155,4 +161,3 @@ function updateMoves() {
     movesText.textContent = `Ходи: ${moves}`;
   }
 }
-console.log(boardToData());
