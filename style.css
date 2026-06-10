@@ -10,9 +10,6 @@ body {
   flex-direction: column;
   align-items: center;
 }
-.wdr-cell[data-value="0"] {
-  color: transparent !important;
-}
 #winMessage {
   font-size: 24px;
   font-weight: bold;
@@ -25,8 +22,8 @@ h1 {
   margin: 30px 0;
 }
 #pivotContainer {
-  width: fit-content;
-  margin: 0 auto;
+  width: 400px;
+  height: 220px;
 }
 
 .wdr-cell {
@@ -48,11 +45,6 @@ h1 {
 .wdr-grid-layout {
   overflow: hidden !important;
 }
-
-.wdr-sheet {
-  overflow: hidden !important;
-}
-
 #shuffle {
   margin-top: 25px;
   padding: 14px 28px;
